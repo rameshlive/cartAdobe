@@ -17,9 +17,9 @@ import { FilterComponent } from './filter/filter.component';
 import { SortComponent } from './sort/sort.component';
 import { OrdersComponent } from './orders/orders.component';
 
-
 import { PricePipe } from './price.pipe';
 import { FormsModule } from '@angular/forms';
+import { PriceComponent } from './price/price.component';
 
 
 @NgModule({
@@ -32,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     FilterComponent,
     SortComponent,
     OrdersComponent,
-    PricePipe
+    PricePipe,
+    PriceComponent
   ],
   imports: [
     BrowserModule,
