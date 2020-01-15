@@ -1,0 +1,15 @@
+<h3>Filters</h3>
+<div class="filter">
+    <div class="minmax">
+        <span>{{ min | currency:"INR" : 'symbol' : '3.0' }}</span> <span>{{ max | currency:"INR" : 'symbol' : '3.0' }}</span>
+    </div>   
+        <mat-slider  [disabled]="disabled"
+            [invert]="invert"
+            [max]="max"
+            [min]="min"
+            [step]="step"
+            [thumbLabel]="thumbLabel"
+            [tickInterval]="tickInterval"
+            [(ngModel)]="value" (input)="onInputChange($event)"></mat-slider>
+   <label>Price</label>  
+</div>

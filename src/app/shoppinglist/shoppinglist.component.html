@@ -1,0 +1,26 @@
+<section class="section-padding--lg">
+    <div class="container-fluid">
+       <div class="row">
+            <div class="col-lg-2 col-sm-12">
+                <app-filter></app-filter>
+            </div>
+            <div class="col-lg-10 col-sm-12">
+                <app-sort (changeSorting)="eventfromsorting($event)"></app-sort>
+                    <div class="list-container row d-flex flex-wrap">
+                        <div class="card list-item col" *ngFor="let item of products | price : field : order">
+                            <img src="{{item.img_url}}" class="card-img-top" alt=""/>
+                            <div class="card-body">
+                              <h5 class="card-title">{{item.name}}</h5>
+                              <p class="price">
+                                  <span class="discount-price">  {{ item.price }}  <span class="actual-price">  {{ item.price +  (item.price * (item.discount /100)) | currency:"INR" : 'symbol' : '3.0'}}</span></span>
+                
+                                  <span class="discount"> {{ item.discount }}% off</span>
+                              </p>
+                              <button href="#" (click)="addtoCart(item.id)" class="btn btn-primary add-to-cart">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>

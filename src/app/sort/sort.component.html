@@ -1,0 +1,15 @@
+
+<div class="row sorting">
+    <div class="col-lg-12">
+        <div class="shop__list__wrapper">
+            <div class="sorting_nav">
+                <span>Sort By</span>
+                <span class="sort-options">
+                <a class="nav-item nav-link" (click)="sendSorting('price,desc')" [class.active]="sorting == 'desc'">Price -- High Low</a>
+                <a class="nav-item nav-link" (click)="sendSorting('price,asc')" [class.active]="sorting == 'asc'">Price -- Low High</a>
+                <a class="nav-item nav-link" (click)="sendSorting('discount,desc')" [class.active]="sorting == 'discount'">Discount</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

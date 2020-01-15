@@ -1,0 +1,18 @@
+.header-cart{
+    position:relative;
+    font-size: 28px;
+    color: #fff;
+    .itemcount{
+        position: absolute;
+        font-size: 13px;
+        height: 20px;
+        width: 20px;
+        text-align: center;
+        line-height: 20px;
+        background: red;
+        border-radius: 50%;
+        FONT-WEIGHT: 100;
+        right: -10px;
+        top: -2px;
+    }
+}

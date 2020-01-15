@@ -1,0 +1,58 @@
+<section class="section-padding--lg">
+    <div class="container">
+       <div class="row">
+            <div class="col-lg-9">
+                <div class="list-container">
+                    <div class="card" *ngFor="let item of orders">
+                        <img src="{{item.img_url}}" class="card-img-top" alt=""/>
+                        <div class="card-body">
+                          <h5 class="card-title">{{item.name}}</h5>
+                            <div class="actions">
+                                <p class="price">
+                                    <span class="discount-price">  {{ item.totalPrice }}  <span class="actual-price">  {{ item.price +  (item.price * (item.discount /100)) | currency:"INR" : 'symbol' : '3.0'}}</span></span>
+                                    <span class="discount"> {{ item.discount }}% off</span>
+                                </p>
+                                <div class="number">
+                                    <button class="minus" (click)="removeCartItem(item.id,item.productCount)">-</button>
+                                    <input  type="number" min="1" max="5" value="{{ item.productCount }}" />
+                                    <button class="plus" (click)="addProductCount(item.id)">+</button>
+                                </div>
+                                <p class="remove">
+                                    <button (click)="removeItem(item.id)" class="btn btn-primary add-to-cart">Remove</button>
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="!orders.length">
+                          <div class="alert alert-info"> Your Shoppping cart is Empty.</div> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Price Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Price (1 item)</td>
+                            <td>700</td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td>578</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>{{totalAmount}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,44 @@
+.sorting_nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 0px;
+    span{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .sort-options{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 30px;
+        .nav-item{
+            font-size: 18px;
+            font-weight: bold;
+            color: #b7b7b7;
+            cursor: pointer;
+            &.active{
+                color:#007bff;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:767px){
+    .sorting_nav{
+        span{
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .sort-options{
+            padding: 0;
+            .nav-item{
+                font-size: 0.8rem;
+                cursor: pointer;
+                padding: .5rem 1rem .5rem 0;
+            }
+        }
+    }
+}
